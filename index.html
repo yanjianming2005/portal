@@ -3,27 +3,545 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jemy Yan's Personal Website">
-  <meta name="keywords" content="jemyyan,front-end,gentylea">
+  <meta name="description"
+    content="Jemy Yan — Senior Front-End Developer. AI-native development with Cursor, Claude & Codex. Building thoughtfully from China.">
+  <meta name="keywords"
+    content="jemyyan, senior front-end developer, AI-native development, Web3, DApps, Cursor, Claude, Codex, gentylea, China">
   <meta name="author" content="Jemy Yan">
-  <title>Jemy Yan</title>
+  <title>Jemy Yan — Senior Front-End Developer</title>
   <style>
+    :root {
+      --font: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      --bg: #F8F6F3;
+      --text: #2C2A28;
+      --text-muted: #6B6560;
+      --accent: #8B6914;
+      --accent-light: #C9A227;
+      --border: rgba(44, 42, 40, 0.12);
+      --card-bg: rgba(255, 255, 255, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: var(--font);
       font-size: 18px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: min(1280px, 92vw);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h1 {
+      font-family: var(--font);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      font-weight: 300;
+    }
+
+    .hero {
+      padding: 3rem 0 2rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    .hero .highlight {
+      background: linear-gradient(120deg, rgba(139, 105, 20, 0.15) 0%, rgba(201, 162, 39, 0.08) 100%);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .hero p+p {
+      margin-top: 1.2rem;
+    }
+
+    section {
+      padding: 2rem 0;
+    }
+
+    section:not(:last-child) {
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .about p {
+      color: var(--text-muted);
+    }
+
+    .about p+p {
+      margin-top: 1rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.9rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text-muted);
+    }
+
+    .skill-tag:hover {
+      color: var(--accent);
+      border-color: rgba(139, 105, 20, 0.3);
+    }
+
+    .project-card {
+      padding: 1.25rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-title {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .project-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .contact-links a:hover {
+      color: var(--accent-light);
+    }
+
+    .wechat-id {
+      color: var(--text-muted);
+    }
+
+    .contact-links a::after {
+      content: "→";
+      font-size: 0.9em;
+    }
+
+    h1 {
+      background: linear-gradient(110deg,
+          var(--text) 0%,
+          var(--text) 40%,
+          var(--accent) 50%,
+          var(--text) 60%,
+          var(--text) 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+
+      0%,
+      100% {
+        background-position: 100% 0;
+      }
+
+      50% {
+        background-position: 0 0;
+      }
+    }
+
+    .hero .highlight {
+      animation: highlight-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes highlight-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(139, 105, 20, 0.2);
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px rgba(139, 105, 20, 0);
+      }
+    }
+
+    .code-demo {
+      margin: 1.25rem 0;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1.25rem 1.5rem;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .code-demo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0.6;
+    }
+
+    .code-line {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .code-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .code-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--accent-light);
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: blink 0.8s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .code-keyword {
+      color: #569cd6;
+    }
+
+    .code-string {
+      color: #ce9178;
+    }
+
+    .code-func {
+      color: #dcdcaa;
+    }
+
+    .code-comment {
+      color: #6a9955;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-tag {
+      opacity: 0;
+      transform: scale(0.8) translateY(10px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out,
+        color 0.2s, border-color 0.2s;
+    }
+
+    .skills-grid.visible .skill-tag {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    .skill-tag:nth-child(1) {
+      transition-delay: 0.05s;
+    }
+
+    .skill-tag:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    .skill-tag:nth-child(3) {
+      transition-delay: 0.15s;
+    }
+
+    .skill-tag:nth-child(4) {
+      transition-delay: 0.2s;
+    }
+
+    .skill-tag:nth-child(5) {
+      transition-delay: 0.25s;
+    }
+
+    .skill-tag:nth-child(6) {
+      transition-delay: 0.3s;
+    }
+
+    .skill-tag:nth-child(7) {
+      transition-delay: 0.35s;
+    }
+
+    .skill-tag:nth-child(8) {
+      transition-delay: 0.4s;
+    }
+
+    .skill-tag:nth-child(9) {
+      transition-delay: 0.45s;
+    }
+
+    .skill-tag:nth-child(10) {
+      transition-delay: 0.5s;
+    }
+
+    .skill-tag:nth-child(11) {
+      transition-delay: 0.55s;
+    }
+
+    .skill-tag:nth-child(12) {
+      transition-delay: 0.6s;
+    }
+
+    .skill-tag:nth-child(13) {
+      transition-delay: 0.65s;
+    }
+
+    .contact-links a {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-links a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-light);
+      transition: width 0.3s ease;
+    }
+
+    .contact-links a:hover::before {
+      width: 100%;
+    }
+
+    .contact-links a::after {
+      content: "→";
+      transition: transform 0.3s ease;
+    }
+
+    .contact-links a:hover::after {
+      transform: translateX(4px);
+    }
+
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(44, 42, 40, 0.08);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 2.5rem 0 2rem;
+      }
+
+      .hero {
+        padding: 2rem 0 1.5rem;
+      }
+
+      section {
+        padding: 1.5rem 0;
+      }
     }
   </style>
 </head>
 
 <body>
-  <p>Hello.</p>
-  <p>My name is <mark>Jemy Yan</mark>, I am a senior front-end developer currently working in China.</p>
-  <p>My LinkedIn profile is here: <a href="https://www.linkedin.com/in/jemyyan/"
-      target="_blank">https://www.linkedin.com/in/jemyyan/</a>,
-    you can also add me on WeChat at ID <mark>gentylea</mark>.</p>
-  <p>Thank you for visiting.</p>
+  <div class="container">
+    <header>
+      <h1>Jemy Yan</h1>
+      <p class="tagline">Senior Front-End Developer · AI-Native Development · Web3</p>
+    </header>
+
+    <section class="hero">
+      <p>Hello.</p>
+      <p>I'm <span class="highlight">Jemy Yan</span>, a senior front-end developer currently based in China. I build
+        interfaces that are both functional and thoughtful — and I develop <strong>entirely with AI</strong>, including
+        <strong>Web3 dApps</strong>. Cursor, Claude, and Codex are my daily partners — from architecture to
+        implementation, AI augments every step of my workflow.
+      </p>
+      <p>With years of experience across the stack, I combine deep technical judgment with AI superpowers to ship faster
+        and smarter. I'm passionate about the AI-native development paradigm and how it reshapes the way we build
+        software.</p>
+      <div class="code-demo reveal">
+        <span class="code-line"><span class="code-keyword">const</span> <span class="code-func">greet</span> = () =>
+          <span class="code-keyword">console</span>.<span class="code-func">log</span>(<span class="code-string">'Hello,
+            World'</span>);</span>
+        <span class="code-line"><span class="code-func">greet</span>(); <span class="code-comment">// we build
+            things</span></span>
+        <span class="code-line"><span class="code-keyword">const</span> stack = [<span
+            class="code-string">'Web3'</span>, <span class="code-string">'React'</span>, <span
+            class="code-string">'Vue.js'</span>];</span>
+        <span class="code-line"><span class="code-keyword">const</span> tools = [<span
+            class="code-string">'Cursor'</span>, <span class="code-string">'Claude'</span>, <span
+            class="code-string">'Codex'</span>];</span>
+        <span class="code-line"><span class="code-comment">// AI-native • ship faster • build smarter</span></span>
+        <span class="code-line typed-line"><span id="typed-code"></span><span class="code-cursor"></span></span>
+      </div>
+    </section>
+
+    <section class="about reveal">
+      <h2>About</h2>
+      <p>I'm passionate about front-end development powered by AI — the craft of guiding intelligent systems to produce
+        excellent code and experiences. Every project I work on is built with AI-native development: Cursor for coding,
+        AI assistants for design decisions, and LLMs for rapid prototyping. I bring both strong technical judgment and
+        fluency in AI-native workflows to every engagement.</p>
+    </section>
+
+    <section class="skills reveal">
+      <h2>Skills and Expertise</h2>
+      <div class="skills-grid">
+        <span class="skill-tag">AI-Native Development</span>
+        <span class="skill-tag">Cursor / Claude / Codex</span>
+        <span class="skill-tag">Web3 / DApps</span>
+        <span class="skill-tag">Ethereum</span>
+        <span class="skill-tag">Smart Contracts</span>
+        <span class="skill-tag">JavaScript / TypeScript</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Vue.js</span>
+        <span class="skill-tag">CSS / Sass</span>
+        <span class="skill-tag">Web Performance</span>
+        <span class="skill-tag">Responsive Design</span>
+        <span class="skill-tag">Accessibility</span>
+        <span class="skill-tag">Build Tools</span>
+      </div>
+    </section>
+
+    <section class="projects reveal">
+      <h2>Work and Projects</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">I've worked on a variety of web applications, from
+        enterprise dashboards and Web3 dApps to consumer-facing products — all built with AI-native development. Reach
+        out to learn more about my recent work and how I leverage AI to deliver faster.</p>
+      <div class="project-card">
+        <div class="project-title">Open to Opportunities Worldwide</div>
+        <div class="project-desc">Seeking teams and projects that embrace AI-native development and Web3. Open to local
+          or remote roles worldwide; for local positions, Hong Kong, Singapore, Dubai, and Toronto are preferred. Let's
+          connect.</div>
+      </div>
+    </section>
+
+    <section class="contact reveal">
+      <h2>Get in Touch</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">I'd love to hear from you — whether it's about a
+        project, a collaboration, or just to say hello.</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/jemyyan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span class="wechat-id">WeChat: <strong>gentylea</strong></span>
+      </div>
+    </section>
+  </div>
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const skillsGrid = document.querySelector('.skills-grid');
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+    revealEls.forEach((el) => observer.observe(el));
+    if (skillsGrid) observer.observe(skillsGrid);
+    const typedEl = document.getElementById('typed-code');
+    const phrases = ["// Built with AI", "// Cursor · Claude · Codex", "// AI + Web3 →"];
+    let phraseIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    let ticker;
+
+    function type() {
+      if (!typedEl) return;
+      const current = phrases[phraseIdx];
+      typedEl.innerHTML = isDeleting ? current.slice(0, charIdx - 1) : current.slice(0, charIdx + 1);
+      charIdx += isDeleting ? -1 : 1;
+      if (!isDeleting && charIdx === current.length) {
+        isDeleting = true;
+        ticker = setTimeout(type, 2000);
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        ticker = setTimeout(type, 300);
+      } else {
+        ticker = setTimeout(type, isDeleting ? 40 : 80);
+      }
+    }
+
+    if (typedEl) setTimeout(type, 1500);
+  </script>
 </body>
 
 </html>
